@@ -31,4 +31,12 @@ class LibraryServiceTest {
         Book livre = new Book("3", "Germinal", "Zola", "978-2070413027");
         assertEquals("Germinal", livre.getTitle());
     }
+
+    @Test
+    void testVolontairementEnEchec() {
+        Book livre = new Book("4", "Test CI", "Auteur", "978-0");
+        assertTrue(livre.isAvailable());
+        assertEquals("Titre attendu different", livre.getTitle());
+    }
+
 }
