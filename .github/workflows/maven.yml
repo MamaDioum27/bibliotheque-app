@@ -29,6 +29,7 @@ jobs:
           mvn -B sonar:sonar
           -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }}
           -Dsonar.token=${{ secrets.SONAR_TOKEN }}
+          -Dsonar.qualitygate.wait=true
 
       # if: always() conserve les rapports meme quand la suite echoue :
       # sans cela, on perd le diagnostic au moment ou on en a besoin
